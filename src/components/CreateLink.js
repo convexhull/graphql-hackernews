@@ -16,9 +16,11 @@ const CreateLink = (props) => {
     const [url, setUrl] = React.useState('')
 
   const [state, executeMutation] = useMutation(POST_MUTATION)
-    const submit = React.useCallback(() => {
-        executeMutation({ url, description });
-    }, [executeMutation, url, description]);
+  const submit = React.useCallback(() => {
+    executeMutation({ url, description }).then(() => {
+      props.history.push('/')
+    })
+  }, [executeMutation, url, description, props.history])
 
     return (
         <div>
