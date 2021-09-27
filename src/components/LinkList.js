@@ -48,7 +48,7 @@ const LinkList = (props) => {
     if (page <= data.feed.count / 10) {
       props.history.push(`/new/${page + 1}`);
     }
-  }, [props.history, data.feed.count, page]);
+  }, [props.history, data, page]);
 
   const previousPage = React.useCallback(() => {
     if (page > 1) {

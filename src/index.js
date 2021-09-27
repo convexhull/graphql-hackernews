@@ -8,7 +8,7 @@ import { Provider, Client, defaultExchanges } from 'urql'
 import { getToken } from './token'
 
 const client = new Client({
-  url: 'http://localhost:4000',
+  url: 'http://localhost:5000',
   fetchOptions: () => {
     const token = getToken();
     return {
